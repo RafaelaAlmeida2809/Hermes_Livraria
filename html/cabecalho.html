@@ -1,0 +1,36 @@
+
+<div class ="cabecalho">
+	<div class="conteudoCabecalho" onmouseover="abrirMenu('menuVertical',false)">
+		<a onclick="abrirAbaInicial()" class="imgLogo cursorHover">Hermes</a>
+		<div class="conteudoPesquisa">
+			<input  type="text" class="inputPesquisa estilo1" placeholder="Busque aqui seu produto" id="inputPesquisa">
+			<select class="dropPesquisa estilo1" id="DropPesquisa"></select>
+			<a >
+				<img class="botaoImagem cursorHover" onclick="pesquisar()" src="../imagens/icones/search.png" id="botaoPesquisa">
+			</a>
+		</div>
+		<div class="conteudoUsuario" onmouseleave="abrirModal(false)">
+			<img class="cursorHover" onmouseover="abrirModal(true)" src="../imagens/icones/user.png" id="imgUsuario" />
+			<p class="cursorHover nomeUsuario" onmouseover="abrirModal(true)" id="nomeUsuario">Logar ou cadastrar</p>
+			<div class="modalUsuario" id="modalUsuario">
+				<a class="cursorHover" href="perfil.html" >Perfil</a><br>
+				<a class="cursorHover" onclick="funcaoDeslogar()">Deslogar</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="conteudoCabecalho">
+		<img class="imgFlaticon cursorHover centralizar" src="../imagens/icones/Menu.png" alt="menu" onmouseover="abrirMenu('menuVertical',true)" />
+		<div class="menuHorizontal centralizar" id="localMenu" onmouseover="abrirMenu('menuVertical',false)"></div>
+	</div>
+</div>
+<div class="localAviso" id="localAviso"></div>
+
+<div class="menuVertical" id="menuVertical" onmouseleave="abrirMenu('menuVertical',false); abrirMenu('menuVertical2',false)">					
+	<div class="conteudoMenu1 estilo1" id="conteudoMenu1"></div>
+	<div class="menuVertical2" id="menuVertical2" >
+		<div class="conteudoMenu2 estilo1" id="conteudoMenu2"></div>
+	</div>
+</div>
+
+		<a href = "carrinho.html" id="botaoCarrinho"><button class="botaoCarrinho botaoPagina" ></button></a>

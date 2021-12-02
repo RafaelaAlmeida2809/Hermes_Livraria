@@ -1,0 +1,130 @@
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<meta name="viewport" content ="width=device-width,initial-scale=1"/>
+		<title>Hermes
+		</title>
+		<link rel="stylesheet" href="../css/produto.css">
+		<link rel="stylesheet" href="../css/generico.css">
+		<link rel="stylesheet" href="../css/cabecalho.css">		
+		<script src="../js/jquery.js"></script>
+		<script type = "text/javascript" src="../js/produto.js"></script>
+		<script type = "text/javascript" src="../js/cabecalho.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script>
+		<script type="module" src="../dist/bundle.js"></script>
+	</head>
+
+	<body id="body">
+		<header>
+			<div id="localCabecalho">
+			</div>
+		</header>
+		<div class="corpo">
+			<div class="localProduto">
+				<img class="imgCoracao " id="imgCoracao2" src="../imagens/icones/heart-inside.png"/>
+				<img class="imgCoracao cursorHover" id="imgCoracao" src="../imagens/icones/heart.png" onclick="favoritar()"/>
+
+				<div class="imagemProduto">
+					<img id="imagemProduto" onmouseover="abrirImagem(true)" onmouseout ="abrirImagem(false)"/>
+					</div>
+				<div class="localDados">
+					<p class="titulo centralizar" id="nomeProduto"></p>
+					<p class="conteudo">***** 10 avaliações 12 pedidos</p>
+					<div class="desativar" id="localInformaçoes">
+						<p class="conteudo" id="descricaoProduto"></p>
+						<div class="centralizarConteudo">
+							<div class="localImg">
+								<img src="../imagens/icones/building.png"/>
+								<p id="editoraProduto"></p>
+							</div>
+							<div class="localImg">
+								<img src="../imagens/icones/book-pages.png"/>
+								<p id="paginasProduto"></p>
+							</div>
+							<div class="localImg">
+								<img src="../imagens/icones/book.png"/>
+								<p id="capaProduto"></p>
+							</div>
+							<div class="localImg">
+								<img src="../imagens/icones/language.png"/>
+								<p id="idiomaProduto"></p>
+							</div>
+							<div class="localImg">
+								<img src="../imagens/icones/calendar.png"/>
+								<p id="anoProduto"></p>
+							</div>
+							
+						</div>
+					</div>
+					<div class="desativar" id="localMensagem">
+						<a href="#localInformaçoes2">Ver informações</a>
+					</div>
+				</div>	
+				<br>
+				<div class="localpagamento">
+					<div class="localDeterminado">
+						<p class="textoResponsivo negrito">Valor</p>
+						<p class="textoResponsivo">R$***** 6-7 dias</p>
+						<p class="textoResponsivo">R$***** 3-4 dias</p>
+						<p class="textoResponsivo">R$***** 1-2 dias</p>
+					</div>
+					<div class="localDeterminado">
+						<p class="negrito centralizar">Frete</p>
+						<input class="inputCep" id="inputCep" placeholder="00000-000" maxlength="9">
+						<button class="botaoEstilo2">Confirmar</button><br>
+						<a href="https://buscacepinter.correios.com.br/app/endereco/index.php"target="_blank">Não sei meu CEP</a>
+					</div>					
+					<div class="localDeterminado centralizar">
+						<p class="titulo centralizar">Valor</p>
+						<p class="strRiscado textoResponsivo centralizar desativar" id="precoAntigo"></p>
+						<p class="strPreco centralizar" id="precoProduto"></p>
+					</div>
+					<div class="localDeterminado centralizar">
+						<p class="titulo centralizar">Valor Total</p>
+						<input type="number" class="inputQtd" id="qtdProduto" onchange="alterarPrecoTotal(this.value)" min="1" value="1"/>
+						<p class="strPreco centralizar"id="precoTotalProduto"></p>
+					</div>						
+					<div class="localDeterminado centralizar">
+						<button class="botaoEstilo1" onclick="adicionarProdutoCarrinho()">Adicionar</button><br>
+						<button class="botaoEstilo1" onclick="adicionarProdutoCarrinho(true)">Comprar agora</button>
+					</div>	
+
+				</div>
+			</div>
+			<br>
+			<div class="localProduto desativar" id="localInformaçoes2">
+				<div class="localInformacoes">
+					<p class="titulo">Descrição</p>
+					<p class="conteudo" id="descricaoProduto2"></p>
+					
+					<div class="localImg">
+						<img src="../imagens/icones/building.png"/>
+						<p id="editoraProduto2"></p>
+					</div>
+					<div class="localImg">
+						<img src="../imagens/icones/book-pages.png"/>
+						<p id="paginasProduto2"></p>
+					</div>
+					<div class="localImg">
+						<img src="../imagens/icones/book.png"/>
+						<p id="capaProduto2"></p>
+					</div>
+					<div class="localImg">
+						<img src="../imagens/icones/language.png"/>
+						<p id="idiomaProduto2"></p>
+					</div>
+					<div class="localImg">
+						<img src="../imagens/icones/calendar.png"/>
+						<p id="anoProduto2"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<img class="imagemGrande centralizar" id="imagemGrande"/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<meta name="viewport" content ="width=device-width,initial-scale=1"/>
+		<title>Hermes
+		</title>
+		<link rel="stylesheet" href="../css/cabecalho.css">
+		<link rel="stylesheet" href="../css/carrinho.css">
+		<link rel="stylesheet" href="../css/generico.css">
+		<script src="../js/jquery.js"></script>
+		<script type = "text/javascript" src="../js/carrinho.js"></script>
+		<script type = "text/javascript" src="../js/cabecalho.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script>
+		<script type="module" src="../dist/bundle.js"></script>
+</head>
+
+	<body id="body">
+		<header>
+			<div id="localCabecalho">
+			</div>
+		</header>
+		<div class ="corpo corpoCentro" id="corpo">
+			
+			<table border = "0" cellpadding="0" cellspacing="0">
+				<thead>
+					<tr class="cabecalhoTabela">
+						<td>Produto</td>
+						<td class="cedulaDescricao"></td>
+						<td class="centralizarText">Quantidade</td>
+						<td class="centralizarText">Preço</td>
+						<td class="cedulaRemover"></td>
+					</tr>
+				</thead>
+				<tbody id="LocalItensTabela">
+				</tbody>
+			</table>
+			<div class="componentesLaterais" >
+				<div class="abaDesconto estilo1"><br>
+					<p>Possui Cupom de desconto?</p><br>
+					<p><input id="cupomDesconto" type="text" placeholder="insira aqui"></p><br>
+					<button onclick="verificarCupom()" class="estilo1">Verificar</button><br>
+				</div>
+				<br><br>
+				<div class="abaDesconto estilo1"><br>
+					<p>Insira seu CEP</p><br>
+					<p><input type="text" placeholder="insira aqui"></p><br>
+					<button onclick="verificarCEP()" class="estilo1">Verificar</button><br>
+				</div>
+				<div>
+					<table border = "0" cellpadding="0" cellspacing="0" class="abaDesconto">
+						<tr>
+							<td class="cedulaValores">Valor</td>
+							<td id="localValor" value="50"></td>
+						</tr>
+						<tr>
+							<td class="cedulaValores" >Desconto</td>
+							<td id="localDesconto">R$00,00</td>
+						</tr>
+						<tr class="produtoTabela">
+							<td class="cedulaValores">Frete</td>
+							<td id="localFrete">R$00,00</td>
+						</tr>
+						<tr>
+							<td class="cedulaValores strDestaque">Valor Total</td>
+							<td class="strDestaque" id="localValorTotal">R$00,00</td>
+						</tr>
+					</table>
+				</div>
+				<div class="abaDesconto estilo1" id="botaoComprar"><br>
+					<button class="botaoEstilo1" onclick="abrirPagamento()">Comprar</button><br><br>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>

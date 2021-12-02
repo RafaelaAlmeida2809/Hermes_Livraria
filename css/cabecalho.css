@@ -1,0 +1,214 @@
+
+.cabecalho{
+	background-color:#b366ff;
+	position:fixed;
+	display:flex;
+	width:100%;
+	flex-wrap:wrap;
+	margin: 0;
+	z-index:4;
+} 
+
+.cabecalho a{	
+	color:white;
+	text-decoration:none;
+}
+.menuVertical a{
+	color:black;
+	text-decoration:none;
+}
+	
+.conteudoCabecalho{
+	width:100%;
+	flex-wrap:wrap;
+	margin: 0;
+	display:flex;
+}
+.imgNext{
+	width:17px;
+	float:right;
+}
+.imgNext:hover{
+	cursor:pointer;
+}
+.imgLogo{
+	width:20%;
+	margin:10px 0 10px 0;
+	font-size:30px;	
+	text-align:center;
+	text-decoration:none;
+}
+.conteudoPesquisa{
+	height:40px;
+	width:55%;
+	margin: auto;
+}
+.inputPesquisa{
+	height:100%;
+	width:60%;
+	margin: auto;
+	border-radius: 3px;
+	float:left;
+}
+.dropPesquisa{
+	height:100%;
+	width:20%;
+	padding: 8px 16px;
+	border-radius: 3px;
+	float:left;
+}
+.botaoImagem{
+	height:40px;
+	margin-left:5px;
+	padding: 8 8 8 8;
+	background-color:white;
+	border: 1px solid gray;
+	float:left;
+}
+.imgFlaticon{
+	width:40px;
+	height:30px;
+	padding: 0 0 10 20;
+}
+
+.menuHorizontal{
+	margin:5 0 5 0;
+	width:90%;
+}
+.menuHorizontal a{
+	text-decoration:none;
+	font-weight:bold;
+	margin-right: 5%;
+    font-size: min(calc(10px + 1.5vw), 20px);
+}
+.menuVertical{
+	position:fixed;
+	display:flex;
+	top:85px;
+	left:0%;
+	max-width:90%;
+	display:none;
+	z-index:4;
+}
+
+.conteudoMenu1{
+    width:15%;
+	min-width:120px;
+    background-color:white;
+	float: left;
+    font-weight: auto;
+	font-family: "arial";
+}
+.menuVertical2{
+	height:75vh;
+	max-height:70%;
+	width: auto;
+	display:none;
+    float: left;
+}
+.conteudoMenu2{
+	display: flex;
+	align-items: center;
+	flex-flow: row wrap;
+	width: auto;
+	height:100%;
+	align-content: flex-start;
+    background-color:white;
+    font-weight: auto;
+	font-family: "arial";
+	writing-mode: vertical-lr;
+}
+
+.conteudoMenu2 a:hover {
+    font-weight: bold;
+    background-color:#dcdcdc;
+}
+/*implemntados via js*/
+.menuDrop1 {
+	position: relative;
+	width:100%;
+	border-bottom: 1px solid red;
+	padding: 10 10 10 10;
+	display: inline-block;
+}
+.menuDrop1:hover{
+	cursor: pointer;
+}
+
+.menuDrop2 {
+	position: relative;
+	width:150px;
+	border-bottom: 1px solid red;
+	padding: 5 5 5 5;
+	display: inline-block;
+	margin:0 5 0 5;
+}
+.menuDrop2:hover {
+    font-weight: bold;
+    background-color:#dcdcdc;
+	cursor: pointer;
+}
+
+.itens{
+	text-decoration:none;
+	writing-mode: horizontal-tb;
+}
+
+.botaoCarrinho{
+	position:fixed;
+	display:flex;
+	top:50%;
+	right:0%;
+	flex-wrap:wrap;
+	margin: 0;
+	margin-right:10px;
+	background-image:url(../imagens/icones/shopping-cart.png);
+	background-color:#E0C1FF;
+    height:calc(40px + 2vw);
+    width:calc(40px + 2vw);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size:calc(28px + 2vw);
+	border:2px solid #b366ff;
+	border-radius:50px;
+}
+.conteudoUsuario{
+	width:20%;
+	display: flex;
+	align-items: center;
+	color:white;
+}
+.conteudoUsuario img{
+	width:30px;
+	height:30px;
+	margin-right:1vw;
+}
+.nomeUsuario{
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.modalUsuario{
+	width:calc(55px + 8vw);
+	height:70px;
+	margin-top:100px;
+	background-color:white;
+	position: absolute;
+	border:2px solid #b366ff;
+	text-align:center;
+	display:none;
+	line-height:30px;
+
+}
+.modalUsuario a{
+	text-decoration:none;
+	color:black;
+}
+.localAviso{
+	position:fixed;
+	display:flex;
+	width:100%;
+	z-index:4;
+	top:15%;
+	left:45%;
+}

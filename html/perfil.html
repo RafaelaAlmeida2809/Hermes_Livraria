@@ -1,0 +1,155 @@
+
+	<head>
+		<meta charset = "utf-8">
+		<meta name="viewport" content ="width=device-width,initial-scale=1"/>
+		<title>Hermes</title>
+		<link rel="stylesheet" href="../css/generico.css">
+		<link rel="stylesheet" href="../css/cabecalho.css">
+		<link rel="stylesheet" href="../css/perfil.css">
+		<script type = "text/javascript" src="../js/cabecalho.js"></script>
+		<script type = "text/javascript" src="../js/perfil.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script>
+		<script type="module" src="../dist/bundle.js"></script>
+		<script src="../js/jquery.js"></script>
+</head>
+<body id="body">
+	<header>
+		<div id="localCabecalho">
+		</div>
+	</header>
+	<div class="alerta centralizar" id="modalAviso">
+		<p id="textoAviso">AVISO</p><br><br>
+		<button class="botaoEstilo1" id="botaoAviso">Ok</button>
+	</div>
+	<div class="corpo centralizar" id="corpo"  >
+		<div class="aba">
+			<div class="esquerda">
+				<div class="categoria aberto" id="aba1" onclick="ativarAba(1)">
+					<div class="esquerda">
+						<p class="titulo">Conta</p>
+						<p class="conteudo">Ver e alterar seus dados</p>
+					</div>
+					<div class="esquerda">
+						<div class="barra"></div>
+					</div>
+				</div>
+				<div class="categoria" id="aba2" onclick="ativarAba(2)">
+					<div class="esquerda">
+						<p class="titulo">Pedidos</p>
+						<p class="conteudo">Ver seus pedidos finalizados e em andamento</p>
+					</div>
+					<div class="esquerda">
+						<div class="barra"></div>
+					</div>
+				</div>
+				<div class="categoria" id="aba3" onclick="ativarAba(3)">
+					<div class="esquerda">
+						<p class="titulo">Favoritos</p>
+						<p class="conteudo">Veja os produtos que você favoritou</p>
+					</div>
+					<div class="esquerda">
+						<div class="barra"></div>
+					</div>
+				</div>
+				<div class="categoria" id="aba4" onclick="ativarAba(4)">
+					<div class="esquerda">
+						<p class="titulo">Endereço</p>
+						<p class="conteudo">Ver seus endereços cadastrados</p>
+					</div>
+					<div class="esquerda">
+						<div class="barra"></div>
+					</div>
+				</div>
+			</div>
+			<div class="moldura esquerda mostrar" id="local1">
+					<div class="campo">
+						<div><p class="titulo">Email:</p></div>
+						<div ><input id="inputEmail" disabled></div>
+					</div>
+					<div class="campo">
+						<div><p class="titulo">Senha:</p></div>
+						<div ><input id="inputSenha" disabled value="Redefinir Senha"></div>
+					</div>
+					<div class="campo">
+						<div><p class="titulo">Nome:</p></div>
+						<div ><input id="inputNome" disabled></div>
+					</div>
+					<div class="campo">
+						<div><p class="titulo">Nascimento:</p></div>
+						<div><input id="inputNascimento" ></div>
+					</div>
+					<div class="campo">
+						<div><p class="titulo">CPF:</p></div>
+						<div ><input id="inputCPF"></div>
+					</div>
+					<div class="campo">
+						<div><p class="titulo">Telefone:</p></div>
+						<div><input id="inputTelefone"></div>
+					</div>
+					<div class="campo">
+						<button class="botaoEditar" id="botaoAtualizar">Salvar</button>
+						<button class="botaoEditar" id="botaoDeslogar" onclick="funcaoDeslogar()">Deslogar</button>
+					</div>
+			</div>
+			
+			<div class="moldura esquerda" id="local2">
+				<div id="localPedidos">
+					<!--<div>
+						<div class="localPedidos cursorHover" onclick="abrirPedido(i)">
+							<p class="negrito">Pedido 1 </p>
+							<p class="conteudo">Data:20/08/2021</p>
+							<p class="conteudo">R$200,00</p>
+							<img class="imgNext" src="../imagens/icones/next.png">
+						</div>
+						<div class="localPedidos cursorHover">
+							
+						</div>
+					</div>-->
+			
+				</div>
+			</div>
+			<div class="moldura esquerda" id="local3">
+				<div id="localFavoritos">
+			
+				</div>
+					
+			</div>
+			<div class="moldura esquerda" id="local4">
+				<div class="localEnderecos" id="localEnderecos">
+			
+				</div>
+			</div>
+		</div>
+	
+	</div>		
+	<div class="modalEndereco" id="modalCadastrarEndereco">
+		<div class="centralizar">
+			<h2 class="negrito">Cadastrar um novo endereço</h2>
+		</div><br>
+		<div class="centralizar">
+			<div><p class="negrito">CEP</p><p class="letraMelhor" >(ex:88888-000)</p></div>
+			<div><a class="letraMelhor" href="https://buscacepinter.correios.com.br/app/endereco/index.php"target="_blank">Não sei meu CEP</a></div>
+			<div><input id="inputCEP"></div><br>
+			<div><p class="negrito">Logradouro</p><p class="letraMelhor" >(ex:Rua Estrela)</p></div>
+			<div><input id="inputLogradouro"></div><br>
+			<div><p class="negrito">Número</p><p class="letraMelhor" > (apenas números):</p></div>
+			<div><input id="inputNumero"></div><br>
+			<div><p class="negrito">Cidade</p></div>
+			<div><input id="inputCidade"></div><br>
+			<div><p class="negrito">Estado</p></div>
+			<div><input id="inputEstado"></div><br>
+			<div><p class="negrito">Complemento</p></div>
+			<div><input id="inputComplemento"></div><br>
+		</div>
+		
+		<div class="centralizar">
+			<button class="botaoEstilo1" onclick="criarEndereco()">Salvar</button>
+			<button class="botaoEstilo2" onclick="modalCadastroEndereco()">Cancelar</button>
+		</div><br>
+		
+	</div>
+
+	
+</body>

@@ -1,0 +1,173 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+    font-weight: auto;
+	font-family: "arial";
+}
+
+.corpo{
+	margin-top:115px;
+	width:100%;
+	flex-flow: row wrap;
+	display: flex;
+	z-index:4;
+}
+html,body{
+	max-width: 1500px;
+	min-width: 700px;
+	overflow-x:hidden;
+	background-color:#E0C1FF;
+}
+body{
+	display:none;
+}
+th,td {
+	/*width: calc(75px + 2vw);*/
+	width: 20%;
+	overflow: hidden;
+}
+td:not(.localDescricao,.cedulaValores){
+	text-align: center; vertical-align: middle;
+}
+table br{
+	line-height:1vw;
+}
+.moldura{	
+	width:calc(145px + 40vw);
+	background-color:#CE9DFF;
+	border: 1px solid #8000ff;
+	padding: 10 10 10 10;
+	text-align:left;
+	flex-flow: row wrap;
+	justify-content:center;
+	display:none;
+}
+.categoria{
+	background-color:#eddbff;
+	text-align:left;
+	width:calc(30px + 20vw);
+	border: 1px solid #8000ff;
+	padding: 5 5 5 5;
+	display:flex;
+	justify-content:space-between;
+}
+.titulo{
+	font-weight:bold;
+	font-size:18px;
+}
+.conteudo{
+	font-size:14px;
+}
+.aba{
+	float:left;
+	margin-left:calc(20vw - 90px);
+}
+input{
+	width:250px;
+	padding:5 5 5 5;
+	margin-bottom:5px;
+	border-radius:5px;
+	border: 1px solid #8000ff;
+	font-size:13px;
+}
+.campo{
+	float:left;
+	margin: 10 0 10 calc(6vw - 30px);
+}
+.botaoEditar{
+	width:100px;
+	height:30px;
+	margin:10px 10px 0 10px;
+}
+.barra{
+	width:4px;
+	height:100%;
+	background-color:8000ff;
+	float:right;
+	display:none;
+}
+.aberto{
+	color:white;
+	background-color:#CE9DFF;
+}
+.aberto .barra{
+	display:block !important;
+}
+.categoria:hover{
+	cursor:pointer;
+}
+.endereco{
+	width:100%;
+	border: 1px solid #8000ff;
+	border-radius:5px;
+	padding:10 10 10 10;
+	background-color:#F1E4FF;
+}
+.endereco:hover:not(.enderecoSelecionado),.botaoTipoPagamento:hover{
+	background-color:#E0C1FF!important;
+	cursor:pointer;
+}
+.enderecoSelecionado{
+	background-color:#CE9DFF!important;
+	cursor:pointer;
+}
+.endereco div{
+	display:flex;
+	justify-content:space-between;
+}
+.endereco div p{
+	margin-right:40px;
+}
+.localEnderecos div button{
+	width:250px;
+}
+.localEnderecos{
+	display:flex;
+	text-align:left;
+	justify-content:space-between;
+	flex-flow: row wrap;
+}
+.localEnderecos div{
+	width:290px;
+	display:flex;
+	padding:5 5 5 5;
+}
+.localEnderecos button{
+	width:290px;
+	height:50px;
+	margin-top:30px;
+}
+.localPedidos,.localProdutos{
+	display:flex;
+	text-align:left;
+	justify-content:space-between;
+	border: 1px solid #8000ff;
+	background-color:white;
+	padding: 5 5 5 5;
+}
+.localProdutos{
+	display:none;
+}
+.localPedidos .imgNext{
+	transform: rotate(90deg);
+}
+.modalEndereco{
+	width:70vw;
+	border-radius:5px;
+	border: 1px solid #8000ff;
+	background-color:white;
+	position:fixed;
+	display:flex;
+	top:15%;
+	right:15%;
+	padding:10 10 10 10;
+	display:none;
+	flex-flow: row wrap;
+}
+.modalEndereco br{
+	line-height:1vw;
+}
+.modalEndereco button{
+	width:300px;
+}

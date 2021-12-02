@@ -1,0 +1,75 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.corpo{
+	margin-top:115px;
+	width:100%;
+	flex-wrap:wrap;	
+	display:none;
+}
+html,body{
+	max-width: 1500px;
+	min-width: 700px;
+	overflow-x:hidden;
+	background-color:#E0C1FF;
+}
+body{
+	display:none;
+}
+.imagemQuadrado{
+	width:50%;
+}.botaoQuadrado{
+	width:50%;
+}
+
+.botaoQuadrado:hover{
+    cursor: pointer;
+}
+.botaoQuadrado:active{
+	background-color:#04B486;
+	color:white;
+    cursor: pointer;
+}
+.LocalProdutosPromocao{
+	width:100%;
+	height:310px;	
+	flex-flow: row nowrap;
+	background-color:#CE9DFF;
+	padding: 10 10 10 10;
+	justify-content:space-between;
+}
+
+.localProdutos{
+	float:left;
+}
+.setaProdutos{
+	width:40px;
+	height:40px;
+	margin-top:95px;
+	float:left;
+}
+.textoPreenchido{
+	font-size:15vw;
+	color:#000;
+	background-image:url(../imagens/icones/livros.jpg);
+    background-position: center;
+    background-size: 200px;
+	-webkit-background-clip:text;
+	-webkit-text-fill-color:transparent;
+}
+
+.espacoProdutos{
+	width:100%;
+	height:300px;	
+	flex-flow: row nowrap;
+	justify-content:space-between;
+}
+
+/*padding: top right bottom left
+
+  border-bottom: 1px solid red;  borda inferior
+  
+  border: 1px solid gray; borda comum*/

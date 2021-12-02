@@ -1,0 +1,151 @@
+<head>
+		<meta charset = "utf-8">
+		<meta name="viewport" content ="width=device-width,initial-scale=1"/>
+		<title>Hermes</title>
+		<link rel="stylesheet" href="../css/generico.css">
+		<link rel="stylesheet" href="../css/cabecalho.css">
+		<link rel="stylesheet" href="../css/pagamento.css">
+		<script type = "text/javascript" src="../js/cabecalho.js"></script>
+		<script type = "text/javascript" src="../js/pagamento.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script>
+		<script type="module" src="../dist/bundle.js"></script>
+		<script src="../js/jquery.js"></script>
+</head>
+<body id="body">
+	<header>
+		<div id="localCabecalho">
+		</div>
+	</header>
+	<div class="alerta centralizar" id="modalAviso">
+		<p id="textoAviso">AVISO</p><br><br>
+		<button class="botaoEstilo1" id="botaoAviso">Ok</button>
+	</div>
+	<div class="corpo centralizar" id="corpo">
+		<div class="moldura">
+			<div class="dadosUsuario">
+				<div class="campo">
+					<div><p class="titulo">Nome:</p></div>
+					<div ><input id="inputNome" disabled></div>
+				</div>
+				<div class="campo">
+					<div><p class="titulo">Email:</p></div>
+					<div><input id="inputEmail" disabled></div>
+				</div>
+				<div class="campo">
+					<div><p class="titulo">CPF:</p></div>
+					<div><input id="inputCPF" ></div>
+				</div>
+				<div class="campo">
+					<div><p class="titulo">Telefone:</p></div>
+					<div><input id="inputTelefone" ></div>
+				</div>
+				
+			</div>
+			<div class="localEnderecos">
+				<div>
+			  		<label id="enderecoSelecionado" class="endereco">
+						<p class="negrito">Endereço:</p>
+					<button class="botaoEstilo2" onclick="modaisEnderecos('modalSelecionarEndereco')">Selecionar outro endereço</button>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="moldura valores">
+			<div id="localProdutos">
+				
+			</div>
+			<div class="produtoP bordaInferior">
+				<p>Frete</p> 
+				<p id="localFrete">R$20,00</p>
+			</div>
+			<div class="produtoP bordaInferiorNegrito">
+				<p>Desconto Cupom</p> 
+				<p id="localDescontoCupom">- R$20,00</p>
+			</div>
+			<div class="produtoP negrito">
+				<p>Valor Total</p> 
+				<p id="localValorTotal">R$80,00</p>
+			</div>
+		</div>
+		<div class="moldura pagamento" id="localPagamento">
+			<button class="botaoTipoPagamento"	onclick="abrirFormaPagamento('pagamentoCartao')"> 
+				<img src="../imagens/icones/credit-card.png">
+				<h4>Cartão de Crédito</h4>
+			</button>
+			<button class="botaoTipoPagamento" onclick="abrirFormaPagamento('pagamentoBoleto')"> 
+				<img src="../imagens/icones/barcode.png">
+				<h4>Boleto</h4><br>
+			</button>
+			<button class="botaoTipoPagamento" onclick="abrirFormaPagamento('pagamentoPix')"> 
+				<img src="../imagens/icones/pix.png">
+				<h4>Pix</h4><br>
+			</button><br>
+			<br>
+			<div class="localTipoPagamento" id="pagamentoCartao">
+				<div><p class="negrito">Número do cartão:</p></div>
+				<div><input id="inputNumeroCartao"></div>
+				<div><p class="negrito">Nome Completo</p><p> (impresso no cartão):</p></div>
+				<div><input id="inputNomeCartao"></div>
+				<div><p class="negrito">Validade:</p></div>
+				<div><input id="inputValidadeCartao"></div>
+				<div><p class="negrito">Código de segurança:</p></div>
+				<div><input id="inputCodigoCartao"></div>
+				<div><p class="negrito">Número de parcelas:</p></div>
+				<div><input id="inputParcelasCartao"></div>	<br>
+				<button class="botaoEstilo1" onclick="finalizarPedido()">Fechar Pedido</button>
+			</div>
+			<div class="localTipoPagamento" id="pagamentoBoleto">
+				<button class="botaoEstilo1" onclick="finalizarPedido()">Gerar Boleto</button>
+			</div>
+			<div class="localTipoPagamento" id="pagamentoPix">
+				<p class="centralizar">Pague com Pix em qualquer dia e a qualquer hora!</p>
+				<p>O pagamento é instantâneo e prático!</p>
+				<p>É muito rápido e seguro!</p>
+				<button class="botaoEstilo1" onclick="finalizarPedido()">Gerar QR-Code</button>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="modalEndereco" id="modalSelecionarEndereco">
+		<div class="centralizar">
+			<h2 class="negrito">Selecione um endereço</h2>
+			<button class="botaoEstilo2" onclick="modaisEnderecos('modalCadastrarEndereco')">Cadastrar um novo endereço</button><br>
+		</div>
+		<div class="localEnderecos" id="localEnderecos">
+			
+		</div>
+		<div class="centralizar">
+			<button class="botaoEstilo2" onclick="modaisEnderecos('modalSelecionarEndereco');atualizarEnderecoSelecionado()">Salvar</button><br>
+		</div>
+	</div>
+	<div class="modalEndereco" id="modalCadastrarEndereco">
+		<div class="centralizar">
+			<h2 class="negrito">Cadastrar um novo endereço</h2>
+		</div><br>
+		<div class="centralizar">
+			<div><p class="negrito">CEP</p><p class="letraMelhor" >(ex:88888-000)</p></div>
+			<div><a class="letraMelhor" href="https://buscacepinter.correios.com.br/app/endereco/index.php"target="_blank">Não sei meu CEP</a></div>
+			<div><input id="inputCEP"></div><br>
+			<div><p class="negrito">Logradouro</p><p class="letraMelhor" >(ex:Rua Estrela)</p></div>
+			<div><input id="inputLogradouro"></div><br>
+			<div><p class="negrito">Número</p><p class="letraMelhor" > (apenas números):</p></div>
+			<div><input id="inputNumero"></div><br>
+			<div><p class="negrito">Cidade</p></div>
+			<div><input id="inputCidade"></div><br>
+			<div><p class="negrito">Estado</p></div>
+			<div><input id="inputEstado"></div><br>
+			<div><p class="negrito">Complemento</p></div>
+			<div><input id="inputComplemento"></div><br>
+		</div>
+		
+		<div class="centralizar">
+			<button class="botaoEstilo1" onclick="criarEndereco()">Salvar</button>
+            <button class="botaoEstilo2" onclick="modaisEnderecos('modalCadastrarEndereco')">Cancelar</button>
+		</div><br>
+		
+	</div>
+	
+</body>

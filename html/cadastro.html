@@ -1,0 +1,129 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<meta name="viewport" content ="width=device-width,initial-scale=1"/>
+		<title>Hermes</title>
+		<link rel="stylesheet" href="../css/generico.css">
+		<link rel="stylesheet" href="../css/cadastro.css">
+		<script type = "text/javascript" src="../js/cadastro.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.22.0/firebase-firestore.js"></script>
+		<script type="module" src="../dist/bundle.js"></script>
+		<script src="../js/jquery.js"></script>
+	</head>
+	<body>
+		<br>
+		<div class="alerta centralizar" id="modalAviso">
+			<p id="textoAviso">AVISO</p><br><br>
+			<button class="botaoEstilo1" id="botaoAviso">Ok</button>
+		</div>
+		<div class="moldura centralizar mostrar" id="abaLogin">
+			<div class="titulo">
+				<p>Bem vindo</p>
+				<p>Realize seu Login<p>
+			</div>
+			<div class="conteudo">
+				<div class="textoAvisos" id="erroLogar"></div>
+				<div>
+					<p class="tituloInput">Email</p>
+				</div>
+				<div>
+					<input type="text" id="localEmail" placeholder="Digite seu email">
+				</div>
+				<div>
+					<p class="tituloInput">Senha</p>
+				</div>
+				<div>
+					<input type="password" id="localSenha" placeholder="Digite sua senha">
+				</div>
+				<div>
+					<p class="link direita cursorHover" onclick="abaRecuperarSenha()" id="esqueceuSenha" >Esqueceu sua senha?</p>
+				</div><br><br>
+				<div>
+					<button class="botaoEstilo1" id="botaoLogar">Logar</button>
+				</div>
+				<div>
+					<p class="strComum">ou realize login pelo<p>
+				</div>
+				<div>
+					<img class="imgAutent" id="loginGoogle" src="../imagens/icones/google-icon.png">
+					<img class="imgAutent" id="loginFacebook" src="../imagens/icones/facebook-logo-1-2.png">
+				</div><br>
+				<p class="link cursorHover" onclick="mudarAba()" id="abrirCadastro">Crie sua conta</p><br>
+			</div>
+		</div>
+		<br>
+		<div class="moldura centralizar" id="abaCadastro">
+			<div class="titulo">
+				<p>Criar seu cadastro</p>
+			</div><br>
+			<div class="conteudo">
+				<div class="textoAvisos" id="erroCadastrar"></div>
+				<div class="alinhado">
+					<p class="obrigatorio">*</p>
+					<p>Nome Completo</p>
+				</div>
+				<div>
+					<input type="text" id="inputNome">
+				</div><br>
+				<div class="alinhado">
+					<p class="obrigatorio">*</p>
+					<p>Data Nascimento</p>
+				</div>
+				<div>
+					<input type="date" id="inputNascimento">
+				</div><br>
+				<div class="alinhado">
+					<p class="obrigatorio">*</p>
+					<p>CPF</p>
+				</div>
+				<div>
+					<input type="text" id="inputCPF">
+				</div><br>
+				<div class="alinhado">
+					<p class="obrigatorio">*</p>
+					<p>Telefone</p>
+				</div>
+				<div>
+					<input type="phone" id="inputTelefone">
+				</div><br>
+				<div class="alinhado">
+					<p class="obrigatorio">*</p>
+					<p>Email</p></div>
+				<div>
+					<input type="text" id="inputEmail">
+				</div><br>
+				<div class="alinhado">
+					<p class="obrigatorio">*</p>
+					<p>Senha</p>
+				</div>
+				<div>
+					<input type="password" id="inputSenha">
+				</div><br>
+				<div id="reCaptcha" class="reCaptcha"></div><br>
+				<div>
+					<button class="botaoEstilo1" id="botaoCadastro">Criar</button>
+				</div><br>
+				<p class="link cursorHover" onclick="mudarAba()" id="abrirLogin">Realizar o login</p><br>
+				<br>
+			</div>
+		</div>
+		<div class="moldura centralizar" id="abaRecuperar">
+			<div class="titulo">
+				<p>Recuperar senha</p>
+			</div>
+			<div class="conteudo">
+				<div>
+					<p class="tituloInput">Digite seu email</p>
+				</div>
+				<div>
+					<input type="text" id="localEmailRecuperar" placeholder="Digite seu email">
+				</div>
+				<div>
+					<button class="botaoEstilo1" id="botaoRecuperar">Recuperar</button>
+				</div><br>
+			</div>
+		</div>
+	</body>
+</html>

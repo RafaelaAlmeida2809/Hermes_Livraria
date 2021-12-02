@@ -1,0 +1,158 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+    font-weight: auto;
+	font-family: "arial";
+}
+
+.corpo{
+	margin-top:115px;
+	width:100%;
+	display: flex;
+	flex-flow: row wrap;
+	z-index:4;
+}
+html,body{
+	max-width: 1500px;
+	min-width: 700px;
+	overflow-x:hidden;
+	background-color:#E0C1FF;
+}
+body{
+	display:none;
+}
+.campo{
+	width:255px;
+	text-align:left;
+	margin: 10 10 10 10;
+}
+.titulo{
+	font-weight:bold;
+	font-size:18px;
+}
+.moldura{
+	width:calc(60vw - 50px);
+	min-width:470px;
+	border: 1px solid #8000ff;
+	background-color:white;
+	margin: 10 0 10 calc(5vw - 15px);
+	padding:10 calc(5vw - 20px) 10 calc(5vw - 20px);
+}
+.Valores{
+	width: calc(30vw) !important;
+	min-width: 300px !important;
+}
+.pagamento{
+	width:90vw!important;
+}
+.dadosUsuario{
+	justify-content:space-between;
+	display:flex;
+	flex-flow: row wrap;
+}
+.localEndereco{
+	border: 1px solid #8000ff;
+}
+.modalEndereco{
+	width:70vw;
+	border-radius:5px;
+	border: 1px solid #8000ff;
+	background-color:white;
+	position:fixed;
+	display:flex;
+	top:15%;
+	right:15%;
+	padding:10 10 10 10;
+	display:none;
+	flex-flow: row wrap;
+}
+.modalEndereco br{
+	line-height:1vw;
+}
+.modalEndereco button{
+	width:300px;
+}
+.localEnderecos div button,.localTipoPagamento button{
+	width:250px;
+}
+.localEnderecos{
+	display:flex;
+	text-align:left;
+	justify-content:space-between;
+	flex-flow: row wrap;
+}
+.localEnderecos div{
+	width:290px;
+	display:flex;
+	padding:5 5 5 5;
+}
+.endereco{
+	width:100%;
+	border: 1px solid #8000ff;
+	border-radius:5px;
+	padding:10 10 10 10;
+	background-color:#F1E4FF;
+}
+.endereco:hover:not(.enderecoSelecionado),.botaoTipoPagamento:hover{
+	background-color:#E0C1FF!important;
+	cursor:pointer;
+}
+.enderecoSelecionado{
+	background-color:#CE9DFF!important;
+	cursor:pointer;
+}
+.endereco div{
+	display:flex;
+	justify-content:space-between;
+}
+.endereco div p{
+	margin-right:40px;
+}
+input{
+	width:250px;
+	padding:5 5 5 5;
+	margin-bottom:5px;
+	border-radius:5px;
+	border: 1px solid #8000ff;
+	font-size:13px;
+}
+.produtoP{
+	display:flex;
+	justify-content:space-between;
+	margin:5 0 5 0;
+	padding:5 5 5 5;
+	text-align:left;
+	font-size:15px;
+}
+.produtoP p{
+	padding:0 5 0 5;
+}
+
+.botaoTipoPagamento{
+	width:95px;
+	height:95px;
+	background-color:#F1E4FF;
+	border: 1px solid #8000ff;
+	margin: 10 10 10 10;
+	padding: 5 5 5 5;
+}
+.botaoTipoPagamento img{
+	width:60%;
+	margin-bottom:5px;
+}
+.localTipoPagamento{
+	width:100%;
+	border: 1px solid #8000ff;
+	padding: 10 10 10 10;
+	display:none;
+}
+.localTipoPagamento * {
+	margin:5 0 5 0;
+}
+.localTipoPagamento img {
+	width:300px;
+}
+.letraMelhor{
+	font-size:12px;
+}

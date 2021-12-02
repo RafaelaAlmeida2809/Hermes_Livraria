@@ -1,0 +1,159 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-family: "arial";
+}
+
+.corpo{
+	margin-top:100px;
+	width:100%;
+	flex-wrap:wrap;	
+}
+html,body{
+	max-width: 1500px;
+	min-width: 700px;
+	overflow-x:hidden;
+	background-color:#E0C1FF;
+}
+body{
+	display:none;
+}
+.localProduto{
+	width:90vw;
+	overflow:auto; 
+	background-color:white;
+	margin: 0 5vw 0 5vw;
+	box-shadow:0 0.5rem 0.5rem rgba(0,0,0,0.4);
+	padding: 1vw 1vw 1vw 1vw;
+	
+}
+.imagemProduto{
+	width:25vw;
+	height:30vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    border: 1px solid gray;
+	float: left;
+}
+.imagemLivro:hover{
+	cursor: zoom-in;
+}
+.imagemProduto img{
+	height:90%;
+}
+.localDados{
+	width:63vw;
+	height:30vw;
+	padding: 2vw 2vw 2vw 2vw;
+	align-items: center;
+    border: 1px solid gray;
+	float: left;
+	color:black;
+}
+.localPagamento{
+	width:100%;
+	overflow:auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+    border: 1px solid gray;
+	float: left;
+}
+.titulo{
+	font-size:calc(10px + 2vw);
+	margin:1vw 0 1vw 0;
+	font-weight:bold;
+}
+.conteudo{
+	font-size:calc(11px + 0.4vw);
+	margin:1.5vw 0 1.5vw 0;
+	text-indent:2vw;
+	text-align: justify;
+}
+.corpo .botaoEstilo1{
+	width:calc(100px + 10vw) !important;
+	height: 40px;
+	margin: 1vw 0 1vw 0;
+}
+.localDeterminado{
+	padding: 1vw 1vw 1vw 1vw;
+	float: left;
+	vertical-align:center;
+
+}
+.inputCep{
+	margin: 1.5vw 5 5 5;
+	padding: 5 5 5 5;
+	text-align: center;
+	width:90px;
+}
+.inputQtd{
+	padding: 5 5 5 5;
+	text-align: center;
+	width:60px;
+}
+.localDeterminado a{
+	font-size:10px;
+	margin-left:10px;
+}
+.textoResponsivo{
+	font-size:calc(11px + 0.4vw);
+	margin: 5 0 5 0;
+	width:calc(90px + 3vw);
+}
+.strPreco{
+	padding: 3 0 5 0;
+	font-size:calc(15px + 0.8vw);
+	font-weight:bold;
+	color:#b366ff!important;
+	font-family: DejaVu Sans Mono, monospace!important;
+}
+.localImg{
+	width:calc(30px + 5vw);
+	padding:5 5 5 5;
+	box-shadow:0.2rem 0.2rem 0.2rem rgba(0,0,0,0.4);
+	text-align: center;
+	float:left;
+}
+.localImg img{
+	width:calc(30px + 3vw);
+	height:calc(30px + 3vw);
+	position:center;
+}
+.localImg p{
+	font-size:calc(7px + 0.4vw);
+	font-weight:bold;
+	text-align:center;
+	margin-top:0.7vw;
+}
+.localInformacoes{
+	width:100%;
+	display: flex;
+	padding:10 10 10 10;
+	flex-flow: row wrap;
+	justify-content: center;
+    border: 1px solid gray;
+	float: left;
+}
+.imgCoracao{
+    position:absolute;
+	display:none;
+	width:calc(10px + 3vw);
+	height:calc(10px + 3vw);
+	z-index:2;
+	float:top;
+	margin: 5 0 0 5;
+}
+.imagemGrande{
+	display:none;
+	position:absolute;
+	height:80vh;
+	padding:5 5 5 5;
+    border: 1px solid gray;
+	z-index:3;
+	background-color:white;
+	margin-top:105px !important;
+}
+	

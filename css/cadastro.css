@@ -1,0 +1,104 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+    font-weight: auto;
+	font-family: "arial";
+	background-color:#E0C1FF;
+}
+
+.corpo{
+	margin-top:85px;
+	width:100%;
+	flex-flow: row wrap;
+	display: flex;
+	justify-content:space-evenly;
+}
+html,body{
+	max-width: 1500px;
+	min-width: 700px;
+	overflow-x:hidden;
+}
+.moldura{	
+	width:400px;
+	background-color:white;
+	border: 1px solid #8000ff;
+	border-radius:15px;
+	display:none;
+}
+div{
+	float:top;
+}
+a{
+	color:black;
+	font-size: 11px;
+	float:right;
+}
+.titulo{
+	font-size:min(calc(20px + 1vw),30px);
+    font-weight: bold;
+	background-color:#b366ff;
+	color:white;
+	padding: 20 5 20 5;
+	text-align:center;
+	vertical-align:center;
+	border-top-right-radius: 14px;
+	border-top-left-radius: 14px;
+}
+.alinhado{
+	display:flex;
+	justify-content:left;
+}
+.reCaptcha{
+	display:flex;
+	justify-content:center;
+}
+.obrigatorio{
+	padding:0 5 0 5;
+	color:red;
+}
+input{
+	width:250px;
+	text-align:left;
+	padding:5 5 5 5;
+	border:none;
+	margin-bottom:5px;
+	border-bottom: 1px solid #8000ff;
+}
+.imgAutent{
+	width:calc(25px + calc(1vw));
+	margin:0 5 0 5;
+}
+.imgAutent:hover{
+	cursor:pointer;
+}
+	
+.conteudo{
+	width:250px;
+	height:justify;
+	justify-content:center;
+	margin:20 75 20 75;
+	background-color:white;
+}
+.tituloInput{
+	text-align:left;
+	padding:5 5 5 5;
+}
+.strComum{
+	font-size:13px;
+	margin: 10 0 10 0;
+}
+.link{
+	font-size:13px;
+	text-decoration: underline black;
+}
+.conteudo *,.titulo *,.moldura *:not(.conteudo,.titulo){
+	background-color:transparent;
+}
+
+.textoAvisos{
+	text-align:left;
+	padding:5 5 5 5;
+	color:red;
+	font-size:15px;
+}

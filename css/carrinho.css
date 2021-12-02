@@ -1,0 +1,97 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+.corpo{
+	margin-top:85px;
+	width:100%;
+	flex-flow: row wrap;
+	display: flex;
+}
+.corpoCentro{
+	justify-content: space-evenly;
+}
+.corpoAjudatado{
+	padding-left:calc(15vw * 0.4);
+}
+
+html,body{
+	max-width: 1500px;
+	min-width: 700px;
+	overflow-x:hidden;
+	background-color:#E0C1FF;
+}
+body{
+	display:none;
+}
+.abaDesconto,table{
+	table-layout: fixed;
+	margin-top:20px;
+	width: 200px;
+	margin-left:2vw;
+	padding: 10 1vw 10 1vw;
+	border: 1px solid gray;
+	float:left;
+	background-color:white;
+}
+th,td {
+	width: calc(75px + calc(2vw));
+	overflow: hidden;
+}
+td:not(.localDescricao,.cedulaValores){
+	text-align: center; vertical-align: middle;
+}
+table br{
+	line-height:1vw;
+}
+.cedulaDescricao{
+  width: 20vw  !important;
+}
+.cedulaRemover{
+  width: calc(65px + calc(2vw))!important;
+}
+.localDescricao{
+	padding: 5 5 5 5;
+}
+p{
+    font-weight: auto;
+	font-family: "arial";
+	font-size:min(calc(7px + 1vw), 13px);
+}
+.strDestaque{
+    font-weight: bold;
+	font-size:min(calc(10px + 1vw), 16px)!important;
+}
+.botaoPagina{
+    width: calc(60px + calc(2vw));
+    padding:  5 1vw 5 1vw;
+	background-color:white;
+    border: 1px solid gray;
+}
+.inputQtd{
+	width:calc(60px + calc(2vw));
+    padding:  5 15 5 15;
+    border: 1px solid gray;
+	margin:0;
+	text-align:center;
+}
+
+.componentesLaterais{
+	width:300px;
+	margin-top:50px;
+	margin-right:5vw;
+	float:left;
+}
+.cedulaValores{
+	width:200px;
+	padding:5 0 5 0;
+}
+.abaDesconto{
+	width:325px !important;
+	text-align:center;
+}
+.abaDesconto br{
+	line-height:15px;
+}
